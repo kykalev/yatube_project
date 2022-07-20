@@ -1,13 +1,15 @@
 from re import template
 from django.shortcuts import render
 from django.http import HttpResponse
+# Импортируем модель, чтобы обратиться к ней
+from .models import Post
 
 
 def index(request):
     template = 'posts/index.html'
-    text = 'Это главная страница проекта Yatube'
+    posts = Post.objects.order_by('-pub_date')[:10]
     context = {
-        'text': text,
+        'posts': posts,
     }
     return render(request, template, context)
 
