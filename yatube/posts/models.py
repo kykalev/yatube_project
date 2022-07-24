@@ -4,6 +4,7 @@ from django.db import models
 
 User = get_user_model()
 
+
 class Group(models.Model):
     title: str = models.CharField(max_length=200)
     slug: str = models.TextField()

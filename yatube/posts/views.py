@@ -1,4 +1,3 @@
-from re import template
 from django.shortcuts import get_object_or_404, render
 # Импортируем модель, чтобы обратиться к ней
 from .models import Group, Post
